@@ -29,6 +29,28 @@ const resolvers = {
               movie.year >= 2000 && movie.year <= 2010
           );    
         },
+    },
+
+    Mutation: {
+        createUser: (parent,args)=>{
+            const user = args.input
+            const lastId = users[users.length - 1].id
+            user.id = lastId + 1
+            users.push(user)
+            return user
+        },
+        updateUserEmail: (parent,args)=>{
+            const {id, email} = args.input
+            const user = _.find(users,{id: Number(id)})
+            user.email = email
+            return user
+        },
+        deleteUser: (parent,args)=>{
+            const {id} = args.id
+            _.remove(users,{id: Number(id)})
+            return null
+            
+        }
     }
 }
 
