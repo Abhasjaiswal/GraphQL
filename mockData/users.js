@@ -6,7 +6,18 @@ const users = [
         age: 22,
         gender: 'male',
         city: 'Benagluru',
-        country: 'India',
+        country: 'INDIA',
+        friends: [
+            {
+                id: 2,
+                name: 'XYZ',
+                email: 'xyz@gmail.com',
+                age: 25,
+                gender: 'male',
+                city: 'New York',
+                country: 'AMERICAN',
+            }
+        ],
     },
 ]
 
